@@ -1,34 +1,34 @@
-#!/USR/BIN/PYTHON3
-DEF ROMAN_VALUE(PRMCHARACTER):
-    ROMAN_LIST = [('I', 1), ('V', 5), ('X', 10),
+#!/usr/bin/python3
+def roman_value(prmCharacter):
+    roman_list = [('I', 1), ('V', 5), ('X', 10),
                   ('L', 50), ('C', 100), ('D', 500), ('M', 1000)]
-    FOR ITEM IN ROMAN_LIST:
-        CHARACTER, VALUE = ITEM
-        IF (PRMCHARACTER IS CHARACTER):
-            RETURN VALUE
-    RETURN NONE
+    for item in roman_list:
+        character, value = item
+        if (prmCharacter is character):
+            return value
+    return None
 
 
-DEF NEXT_VALUE(PRMSTRING, PRMINDEX):
-    IF PRMINDEX + 1 < LEN(PRMSTRING):
-        RETURN ROMAN_VALUE(PRMSTRING[PRMINDEX + 1])
-    ELSE:
-        RETURN NONE
+def next_value(prmString, prmIndex):
+    if prmIndex + 1 < len(prmString):
+        return roman_value(prmString[prmIndex + 1])
+    else:
+        return None
 
 
-DEF ROMAN_TO_INT(ROMAN_STRING):
-    RESULT = 0
+def roman_to_int(roman_string):
+    result = 0
 
-    IF (ROMAN_STRING IS NONE OR ISINSTANCE(ROMAN_STRING, STR) IS FALSE):
-        RETURN RESULT
+    if (roman_string is None or isinstance(roman_string, str) is False):
+        return result
 
-    ENUM = ENUMERATE(ROMAN_STRING)
-    FOR INDEX, CHARACTER IN ENUM:
-        CURRENTVALUE = ROMAN_VALUE(CHARACTER)
-        NEXTVALUE = NEXT_VALUE(ROMAN_STRING, INDEX)
-        IF NEXTVALUE IS NONE OR CURRENTVALUE >= NEXTVALUE:
-            RESULT += CURRENTVALUE
-        ELSE:
-            RESULT += (NEXTVALUE - CURRENTVALUE)
-            NEXT(ENUM)
-    RETURN RESULT
+    enum = enumerate(roman_string)
+    for index, character in enum:
+        currentValue = roman_value(character)
+        nextValue = next_value(roman_string, index)
+        if nextValue is None or currentValue >= nextValue:
+            result += currentValue
+        else:
+            result += (nextValue - currentValue)
+            next(enum)
+    return result
