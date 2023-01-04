@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 nqueens backtracking program to print the coordinates of n queens
