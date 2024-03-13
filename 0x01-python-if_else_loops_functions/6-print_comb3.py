@@ -5,5 +5,4 @@ for i in range(1, 99):
         if i == 89:
             print("89")
         else:
-            print(f"{i:02}", end=", ")
-
+            print("{:02}".format(i), end=", ")
