@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def update_dictionary(a_dictionary, key, value):
     """Function that replaces or adds key/value in a dictionary.
     key argment will always be a string
@@ -13,5 +14,8 @@ def update_dictionary(a_dictionary, key, value):
         value: dictionary value
     """
     a_dictionary.update({key: value})
-    return(a_dictionary)
-    
+    return a_dictionary
+
+
+if __name__ == '__main__':
+    main()
