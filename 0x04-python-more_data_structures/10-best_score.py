@@ -6,10 +6,8 @@ def best_score(a_dictionary):
     Args:
         a_dictionary
     Returns:
-        a key
+        a key with the highest value or None if empty dictonary
     """
-    if a_dictionary:
-        max_key = max(a_dictionary.keys())
-    else:
-        max_key = None
-    return max_key
+    if not a_dictionary:
+        return None
+    return max(a_dictionary, key=a_dictionary.get)
