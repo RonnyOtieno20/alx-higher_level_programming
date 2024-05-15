@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def best_score(a_dictionary):
     """Function that returns a key with the biggest integer value.
     Args:
