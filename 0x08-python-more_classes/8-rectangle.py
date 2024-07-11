@@ -47,9 +47,6 @@
   """
 
 
-from typing import Type
-
-
 class Rectangle:
     """Representation of a rectangle"""
 
